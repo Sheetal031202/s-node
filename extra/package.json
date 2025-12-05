@@ -1,0 +1,16 @@
+{
+  "name": "extra",
+  "version": "1.0.0",
+  "description": "",
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "a.js",
+  "scripts": {
+    "start": "nodemon a"
+  },
+  "dependencies": {
+    "express": "^5.2.1",
+    "nodemon": "^3.1.11"
+  }
+}

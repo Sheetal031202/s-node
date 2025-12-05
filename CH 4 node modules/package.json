@@ -1,0 +1,12 @@
+{
+  "name": "ch-4-node-modules",
+  "version": "1.0.0",
+  "description": "",
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "node4_Index.js",
+  "scripts": {
+    "start": "node node4_Index"
+  }
+}
