@@ -1,15 +1,16 @@
 {
-  "name": "extra",
+  "name": "node-11",
   "version": "1.0.0",
   "description": "",
   "license": "ISC",
   "author": "",
   "type": "commonjs",
-  "main": "a.js",
+  "main": "index.js",
   "scripts": {
-    "start": "node server.js"
+    "start": "nodemon server"
   },
   "dependencies": {
+    "ejs": "^3.1.10",
     "express": "^5.2.1",
     "nodemon": "^3.1.11"
   }

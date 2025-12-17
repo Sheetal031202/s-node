@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <title>HOME</title>
+</head>
+
+<body>
+    <h2>hello <%= name %> to my home page </h2>
+    <br />
+    <hr />
+
+    <h2>ADD Data:..............................................</h2>
+    <!-- 1 create form  name attribute sathe -->
+     <!-- 2 method get tyare, action ma /adduser -->
+      <!-- 3rd server ma chhe -->
+       <!-- 5 method get ni badle post -->
+        <!-- 6 server page par -->
+    <form method="post"  action="/adduser">
+        <table border="1">
+           
+            <tr>
+                <td>Name:</td>
+                <td><input type=name name="name" /></td>
+            </tr>
+            <tr>
+                <td>Email:</td>
+                <td><input type=email name="email" /></td>
+            </tr>
+            <tr>
+                <td>Password:</td>
+                <td><input type=password name="password" /></td>
+            </tr>
+            <tr>
+                <td>phone:</td>
+                <td><input type=tel name="phone" /></td>
+            </tr>
+            <tr>
+                <td>Adress: </td>
+                <td><textarea name="adress"></textarea></td>
+            </tr>
+            <tr>
+                <td> <button type="submit"> SUbmit</button>
+                </td>
+            </tr>
+        </table>
+    </form>
+    <br /><br />
+    <hr />
+
+    <h2>TABLE VIEW:.......................................................................................</h2>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Id:</th>
+                <th>Name:</th>
+                <th>Email:</th>
+                <th>Password:</th>
+                <th>Phone:</th>
+                <th>Adress:</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            <% users.map((data)=>{%>
+                <tr>
+                    <th>
+                        <%= data.id %>
+                    </th>
+                    <th>
+                        <%= data.name %>
+                    </th>
+                    <th>
+                        <%= data.email %>
+                    </th>
+                    <th>
+                        <%= data.password %>
+                    </th>
+                    <th>
+                        <%= data.phone %>
+                    </th>
+                    <th>
+                        <%= data.adress %>
+                    </th>
+
+                </tr>
+                <% })%>
+
+        </tbody>
+    </table>
+</body>
+
+</html>
