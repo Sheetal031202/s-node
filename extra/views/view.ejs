@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<style>
+    body {
+        background-color: black;
+        color: white;
+    }
+
+    h2 {
+        color: green;
+    }
+</style>
+<title>Document</title>
+</head>
+
+<body>
+    <h2>Welcom <%=name%> view page</h2>
+
+    <table border="1">
+        <tr>
+            <th>ID</th>
+            <th>name</th>
+            <th>std</th>
+            <th>div</th>
+            <th>Action</th>
+
+        </tr>
+
+        <% allUsers.map((e)=>{%>
+
+            <tr>
+                <th>
+                    <%=e.id%>
+                </th>
+                 <th>
+                    <%=e.name%>
+                </th> <th>
+                    <%=e.std%>
+                </th> <th>
+                    <%=e.div%>
+                </th>
+                <th>
+                    <button><a href="/editPage?idd=<%=e.id%>">Edit</a></button>
+                    <button><a href="/delete?idd=<%=e.id%>">Delete</a></button>
+                </th>
+            </tr>
+
+            <%})%>
+
+    </table>
+    <button><a href="/">add Data</a></button>
+
+
+</body>
+
+</html>

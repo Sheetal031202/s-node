@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <title>view</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+</head>
+
+<body class="bg-dark text-light">
+
+    <!-- <h2>HOME PAGE:........:</h2> -->
+    <h2 class="text-success">hello....... <%=name%> view page
+            <p>________________________________________________________________________________________________________________________________________________________________________________________________________
+            </p>
+    </h2>
+
+    <table class="table table-dark table-strapped container">
+        <thead>
+            <tr>
+                <th scope="col">Id</th>
+                <th scope="col">name</th>
+                <th scope="col">std</th>
+                <th scope="col">Action</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            <%allUsers.map((e)=>{%>
+
+                <tr>
+                    <td>
+                        <%=e.id%>
+                    </td>
+                    <td>
+                        <%=e.name%>
+                    </td>
+                    <td>
+                        <%=e.std%>
+                    </td>
+
+                    <td>
+                        <button class="btn btn-success my-3"><a href="/edit?iid=<%=e.id%>"
+                                class="text-light text-decoration-none">Edit</a></button>
+                        <button class="btn btn-danger my-3"><a href="/delete?iid=<%=e.id%>"
+                                class="text-light text-decoration-none">delete</a></button>
+
+                    </td>
+                </tr>
+
+
+                <% })%>
+        </tbody>
+    </table>
+
+
+
+    <button class="btn btn-success my-3"><a href="/" class="text-light text-decoration-none">ADD new one</a></button>
+
+
+
+
+    <!-- bootstap cdn -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
