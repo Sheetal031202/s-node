@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <title>School Website</title>
+
+    <style>
+        :root {
+            --primary-1: #2c6bed; /* change this to your exact color */
+        }
+
+        .school-navbar {
+            background-color: var(--primary-1);
+        }
+
+        .school-navbar .nav-link,
+        .school-navbar .navbar-brand {
+            color: #fff !important;
+            font-weight: 500;
+        }
+
+        .school-navbar .nav-link:hover {
+            color: #ffd966 !important;
+        }
+
+        .school-navbar .navbar-toggler {
+            border-color: rgba(255,255,255,0.7);
+        }
+
+        .school-navbar .navbar-toggler-icon {
+            filter: invert(1);
+        }
+    </style>
+</head>
+<body>
+
+<!-- Navbar Start -->
+<nav class="navbar navbar-expand-lg school-navbar">
+    <div class="container">
+        <a class="navbar-brand" href="#">🌟 ABC Public School</a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#schoolNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="schoolNav">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">About Us</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Admissions</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Academics</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<!-- Navbar End -->
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

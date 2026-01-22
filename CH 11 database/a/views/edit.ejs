@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <style>
+    body{
+        background-color: black;
+        color: white;
+    }
+  </style>
+    <title>Edit</title>
+</head>
+<body>
+    
+       <form method="post" action="editpost">
+
+        <label for="">Name</label>
+        <input type="text" name="id" value=<%=singleData.id%><br /><br />
+        <input type="text" name="name" value=<%=singleData.name%>><br /><br />
+        <label for="">Std</label>
+        <input type="text" name="std" value=<%=singleData.std%>><br /><br />
+         <label for="">Image</label>
+        <input type="text" name="image" value=<%=singleData.image%>><br /><br />
+
+        <button type="submit">Updated</button>
+    </form>
+</body>
+</html>

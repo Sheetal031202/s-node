@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Students List</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        body {
+            background-color: #f5f7fb;
+        }
+
+        .page-title {
+            color: var(--primary-1);
+            font-weight: 600;
+        }
+
+        .table thead {
+            background-color: var(--primary-1);
+            color: #fff;
+        }
+
+        .action-btn a {
+            color: #fff;
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body class="d-flex flex-column min-vh-100">
+
+    <!-- Navbar -->
+    <%- include("navbar") %>
+
+    <!-- Page Content -->
+    <main class="flex-fill">
+        <div class="container my-5">
+
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <h2 class="page-title">Students Data</h2>
+                <a href="/" class="btn btn-success">+ Add Student</a>
+            </div>
+
+            <div class="card shadow-sm">
+                <div class="card-body">
+
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-hover align-middle text-center">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Student ID</th>
+                                    <th>Name</th>
+                                    <th>Standard</th>
+                                    <th>Division</th>
+                                   
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <% allStudents.map((e,i)=>{ %>
+                                    <tr>
+                                        <td><%= i + 1 %></td>
+                                        <td><%= e.id %></td>
+                                        <td><%= e.name %></td>
+                                        <td><%= e.std %></td>
+                                        <td><%= e.div %></td>
+                                        
+                                        <td>
+                                            <a href="/edit?editId=<%=e.id%>" class="btn btn-sm btn-warning me-1">
+                                                Edit
+                                            </a>
+                                            <a href="/delete?deleteId=<%=e.id%>" class="btn btn-sm btn-danger"
+                                               onclick="return confirm('Are you sure you want to delete this student?')">
+                                                Delete
+                                            </a>
+                                        </td>
+                                    </tr>
+                                <% }) %>
+                            </tbody>
+                        </table>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <%- include("footer") %>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

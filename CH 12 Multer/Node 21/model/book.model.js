@@ -24,6 +24,6 @@ const bookSchema = new mongoose.Schema({
 })
 
 // model(modelName, schema, collectionName)
-const BookModel = mongoose.model("Book", bookSchema, "myCollection")
+const BookModel = mongoose.model("Book", bookSchema, "bookCollection")
 
 module.exports = BookModel

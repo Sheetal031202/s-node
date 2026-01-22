@@ -1,7 +1,7 @@
 const { name } = require("ejs")
 const express = require("express")
 const app = express()
-const PORT = 8000
+const PORT = 8080
 
 // 1 ejs mate
 app.set("view engine", "ejs")

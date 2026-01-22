@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Edit Book</title>
+    <style>
+        img{
+            height: 100px;
+            width: 200px;
+        }
+    </style>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body class="bg-dark">
+
+    <div class="container d-flex justify-content-center align-items-center min-vh-100">
+
+        <div class="card shadow-lg border-0 col-md-5 col-lg-4">
+            <div class="card-body p-4">
+
+                <h3 class="text-center mb-4 fw-bold">📚Edit.......</h3>
+
+                <form method="POST" action="/editpost" enctype="multipart/form-data">
+
+                    <div class="mb-3">
+                        <label class="form-label">Book Name</label>
+                        <input type="hidden" name="id" class="form-control" value=<%=singleData.id%>>
+                        <input type="text" name="book_name" class="form-control" value=<%=singleData.book_name%>>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Author</label>
+                        <input type="text" name="book_author" class="form-control"  value=<%=singleData.book_author%> >
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Price</label>
+                        <input type="tel" name="book_price" class="form-control"  value=<%=singleData.book_price%> >
+                    </div>
+
+                    <div class="mb-4">
+                        <label class="form-label">Language</label>
+                        <input type="text" name="book_lang" class="form-control"value=<%=singleData.book_lang%> >
+                    </div>
+
+                      <div class="mb-4">
+                        <label class="form-label">Image</label>
+
+                        <input type="file" name="book_image" class="form-control" value=<%=singleData.book_image%> >
+<img src="../<%=singleData.book_image %>" alt="Book Image">
+                    </div>
+                    <button type="submit" class="btn btn-warning w-100 fw-semibold">
+                        Add Book
+                    </button>
+
+                </form>
+
+            </div>
+        </div>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

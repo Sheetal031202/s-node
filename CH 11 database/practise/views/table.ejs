@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  <title>table</title>
+</head>
+
+<body class="bg-dark text-light">
+
+  <h2>View page</h2>
+
+  <table class="table table-dark table-striped">
+    <thead>
+      <tr>
+
+        <th>Id</th>
+        <th>Name</th>
+        <th>std</th>
+        <th>Image</th>
+        <th>action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <%all.map((e,i)=>{%>
+
+        <tr>
+          <td>
+            <%=i+1%>
+          </td>
+          <td>
+            <%=e.book_name%>
+          </td>
+          <td>
+            <%=e.book_price%>
+          </td>
+          <td> <img src="<%= e.book_image %>" width="80">
+          </td>
+
+          <td>
+            <button class="btn btn-success">Edit</button>
+
+            <a href="/delete?deleteId=<%= e._id %>" class="btn btn-danger btn-sm">
+  Delete
+</a>
+
+          </td>
+        </tr>
+
+
+        <%})%>
+
+    </tbody>
+  </table>
+
+
+
+
+  <button class="btn btn-success"><a href="/home" class="text-white text-decoration-none">ADD</a></button>
+
+
+
+
+
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>

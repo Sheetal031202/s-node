@@ -1,60 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Add Book</title>
-
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+        }
+    </style>
 </head>
 
-<body class="bg-dark">
+<body>
+    <h2>hello home page <%=name%>
+    </h2>
 
-    <div class="container d-flex justify-content-center align-items-center min-vh-100">
 
-        <div class="card shadow-lg border-0 col-md-5 col-lg-4">
-            <div class="card-body p-4">
+    <form method="post" action="addpost">
 
-                <h3 class="text-center mb-4 fw-bold">📚 Add New Book</h3>
+        <label for="">Name</label>
+        <input type="text" name="name"><br /><br />
+        <label for="">Std</label>
+        <input type="text" name="std"><br /><br />
+         <label for="">Image</label>
+        <input type="text" name="image"><br /><br />
 
-                <form method="POST" action="/addform">
-
-                    <div class="mb-3">
-                        <label class="form-label">Book Name</label>
-                        <input type="text" name="book_name" class="form-control" placeholder="Enter book name" required>
-                    </div>
-
-                    <div class="mb-3">
-                        <label class="form-label">Author</label>
-                        <input type="text" name="book_author" class="form-control" placeholder="Enter author name" required>
-                    </div>
-
-                    <div class="mb-3">
-                        <label class="form-label">Price</label>
-                        <input type="tel" name="book_price" class="form-control" placeholder="Enter price" required>
-                    </div>
-
-                    <div class="mb-4">
-                        <label class="form-label">Language</label>
-                        <input type="text" name="book_lang" class="form-control" placeholder="Enter language" required>
-                    </div>
-
-                      <div class="mb-4">
-                        <label class="form-label">Image</label>
-                        <input type="text" name="book_image" class="form-control" placeholder="Enter language" required>
-                    </div>
-                    <button type="submit" class="btn btn-primary w-100 fw-semibold">
-                        Add Book
-                    </button>
-
-                </form>
-
-            </div>
-        </div>
-
-    </div>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+        <button type="submit">ADD</button>
+    </form>
 </body>
+
 </html>

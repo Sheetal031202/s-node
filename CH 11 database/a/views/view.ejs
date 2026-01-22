@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <title>view</title>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+        }
+
+        a {
+            text-decoration: none;
+            color: black;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>this is view page</h2>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>No</th>
+                <th>Image</th>
+                <th>Name</th>
+                <th>Std</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% allData.map((e,i)=>{%>
+
+                <tr>
+                    <td>
+                        <%=i+1%>
+                    </td>
+                    <td>
+                        <img src="<%=e.image%>" width="50px" alt="">
+                    </td>
+                    <td>
+                        <%=e.name%>
+                    </td>
+                    <td>
+                        <%=e.std%>
+                    </td>
+                    <td>
+                        <button><a href="/edit/<%=e.id%>">Edit</a></button>
+                        <button><a href="/delete?deleteId=<%=e.id%>">Delete</a></button>
+                    </td>
+                </tr>
+  <%})%>
+
+
+        </tbody>
+    </table>
+
+
+    <button style="margin: 10px 0;"><a href="/">Add New Data</a></button>
+</body>
+
+</html>

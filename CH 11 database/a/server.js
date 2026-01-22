@@ -1,65 +1,57 @@
 const express = require("express")
-require("./config/db.config")
-
-// model require
-const BookModel = require("./model/book.model")
-
 const app = express()
-
+const mongoose = require("./config/db.config")
+const aaModel = require("./model/name.model")
+const PORT = 8000;
 
 app.set("view engine", "ejs")
-
 app.use(express.urlencoded())
 
-
-
-app.get("/", async (req, res) => {
-
-    // find method
-    let allBooks = await BookModel.find()
-    res.render("table", {
-        allBooks
+app.get("/", (req, res) => {
+    res.render("home", {
+        name: "sheetal"
     })
 })
 
-app.get("/addFormPage", (req, res) => {
-    res.render("home")
-})
+app.post("/addpost", async (req, res) => {
 
-
-app.post("/addform", async (req, res) => {
-    // console.log("Form Data:", req.body)
-    // create method
-    const bookAdd = await BookModel.create(req.body)
-    if (bookAdd) {
-        console.log("Data added");
-        res.redirect("/");
-    }
+    const addData = await aaModel.create(req.body)
+    if (addData) { console.log("data added") }
     else {
-        console.log("not added");
+        console.log("not added data")
     }
+
+    res.redirect("/view")
+})
+
+app.get("/view", async(req, res) => {
+
+    const allData= await aaModel.find()
+
+    res.render("view",{
+        allData
+    })
 })
 
 
-// delete
-
-app.get("/deleteBook",async (req,res)=>{
-    // method
-   let deleted=await BookModel.findByIdAndDelete(req.query.bookDel)
-
-   if(deleted){
-    console.log("deleted")
-   }
-   else{
-    console.log("not deleted")
-   }
-       res.redirect("/")
-
+app.get("/delete", async(req,res)=>{
+    console.log("delete id:",    req.query.deleteId)
+ 
+let deleted=await aaModel.findByIdAndDelete(req.query.deleteId)
+if(deleted){console.log("data deleted")}
+else{console.log("not deleted data")}
+    res.redirect("/view")
 })
 
+app.get("/edit/:idd",async (req,res)=>{
+const singleData=await afindById(req.query.idd)
 
+    res.render("edit",{
+        singleData
+    })
+})
 
-app.listen(8000, (err) => {
-    if (err) console.log("Error:", err)
-    console.log("Server started on port 8000")
+app.listen(PORT, (er) => {
+    if (er) { console.log("not server started.......") }
+    console.log("yes...server staretd...")
 })
