@@ -1,0 +1,115 @@
+<!-- header -->
+<%- include("header.ejs")%>
+
+    <!-- main  -->
+    <!-- Page wrapper  -->
+    <!-- ============================================================== -->
+    <div class="page-wrapper">
+        <!-- ============================================================== -->
+        <!-- Bread crumb and right sidebar toggle -->
+        <!-- ============================================================== -->
+        <div class="page-breadcrumb">
+            <div class="row">
+                <div class="col-12 d-flex no-block align-items-center">
+                    <h4 class="page-title">Tables</h4>
+                    <div class="ml-auto text-right">
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">Library</li>
+                            </ol>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- ============================================================== -->
+        <!-- End Bread crumb and right sidebar toggle -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- Container fluid  -->
+        <!-- ============================================================== -->
+        <div class="container-fluid">
+            <!-- ============================================================== -->
+            <!-- Start Page Content -->
+            <!-- ============================================================== -->
+            <div class="row">
+                <div class="col-12">
+
+
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">All Admin Data</h5>
+                            <div class="table-responsive">
+                                <table id="zero_config" class="table table-striped table-bordered">
+                                    <thead>
+                                        <tr>
+                                            <th>No</th>
+                                            <th>First Name</th>
+                                            <th>Last Name</th>
+                                            <th>Email</th>
+                                            <th>Password</th>
+                                            <th>COntact No</th>
+                                            <th>Gender</th>
+                                            <th>Hobby</th>
+                                            <th>City</th>
+                                            <th>About</th>
+                                            <th>Image</th>
+                                            <%if(data.email=="sheetaldave0312@gmail.com"){%>
+                                                                                        <th>Action</th>
+
+                                           <%  } %>
+
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <%allAdminData.map((e,i)=>{%>
+                                            <tr>    
+                                                <td><%=i+1%></td>
+                                                <td><%=e.fname%></td>
+                                                <td><%=e.lname%></td>
+                                                <td><%=e.email%></td>
+                                                <td><%=e.password%></td>
+                                                <td><%=e.contact%></td>
+                                                <td><%=e.gender%></td>
+                                                <td><%=e.hobby%></td>
+                                                <td><%=e.city%></td>
+                                                <td><%=e.about%></td>
+                                                <td><img src="../<%=e.image%>" width="100px" alt="" ></td>
+                                               <%if(data.email=="sheetaldave0312@gmail.com"){%>
+ <td>
+                                                    <button class="btn btn-success"><a class="text-light" href="/editAdmin/<%=e._id%>">Edit</a></button>
+                                                    <button class="btn btn-danger"><a  class="text-light"href="/deleteAdmin/?deleteId=<%=e._id%>">Delete</a></button>
+                                                </td>
+                                           <%  } %>
+                                            
+                                            </tr>
+                                            <%})%>
+
+
+
+
+                                    </tbody>
+
+                                </table>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- ============================================================== -->
+            <!-- End PAge Content -->
+            <!-- ============================================================== -->
+            <!-- ============================================================== -->
+            <!-- Right sidebar -->
+            <!-- ============================================================== -->
+            <!-- .right-sidebar -->
+            <!-- ============================================================== -->
+            <!-- End Right sidebar -->
+            <!-- ============================================================== -->
+        </div>
+
+
+        <!-- footer -->
+        <%- include("footer.ejs")%>
