@@ -1,0 +1,98 @@
+<%-include("../header.ejs")%>
+
+    <!-- table -->
+    <div class="row g-4">
+        <div class="col-12">
+            <div class="bg-secondary rounded h-100 p-4">
+                <h6 class="mb-4">All Admin </h6>
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col">No</th>
+                                <th scope="col">First Name</th>
+                                <th scope="col">Last Name</th>
+                                <th scope="col">Email</th>
+                                <th scope="col">Password</th>
+                                <th scope="col">Contact No</th>
+                                <th scope="col">Gender</th>
+                                <th scope="col">Hobby</th>
+                                <th scope="col">City</th>
+                                <th scope="col">Image</th>
+
+                                <%if(adminData.email=="sheetaldave0312@gmail.com"){%>
+                                    <th>Action</th>
+
+                                    <% } %>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <%allAdminData.map((e,i)=>{%>
+                                <tr>
+
+                                    <td>
+                                        <%=i+1%>
+                                    </td>
+                                    <td>
+                                        <%=e.fname%>
+                                    </td>
+                                    <td>
+                                        <%=e.lname%>
+                                    </td>
+                                    <td>
+                                        <%=e.email%>
+                                    </td>
+                                    <td>
+                                        <%=e.password%>
+                                    </td>
+                                    <td>
+                                        <%=e.contact%>
+                                    </td>
+                                    <td>
+                                        <%=e.gender%>
+                                    </td>
+                                    <td>
+                                        <%=e.hobby%>
+                                    </td>
+                                    <td>
+                                        <%=e.city%>
+                                    </td>
+                                    <td><img src="../<%=e.image%>" width="100px" alt=""></td>
+                                                                    <%if(adminData.email=="sheetaldave0312@gmail.com"){%>
+
+                                    <td>
+
+
+                                        <button class="btn btn-success"><a class="text-light"
+                                                href="/editAdminPage/<%=e._id%>">Edit</a></button>
+                                        <button class="btn btn-danger"><a class="text-light"
+                                                href="/deleteAdmin/?deleteId=<%=e._id%>">Delete</a></button>
+                                    </td>
+
+
+                                    <% } %>
+
+                                </tr>
+                                <%})%>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <!-- Table End -->
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+    <%-include("../footer.ejs")%>

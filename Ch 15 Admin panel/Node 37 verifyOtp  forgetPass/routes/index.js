@@ -1,9 +1,9 @@
 const express = require("express")
 const multer = require("multer")
-const { adminLoginShowFun,adminLoginCheckedFun,newPassSetFun,forgetPassSetPageShowFun,otpVerifyFun,changePasswordFun,changePasswordLogicFun,forgetPasswordVerifyEmailFun,logOutFun,dashboardPageShowFun, addAdminPageShowFun, viewAdminPageShowFun, addAdminLogicFun
-     ,deleteAdminFun,editAdminPageShowFun, editAdminLogicFun,
-     profilePageShowFun,
-     otpVerifyPageShowFun} = require("../controller/pageController")
+const { adminLoginShowFun, adminLoginCheckedFun, newPassSetFun, forgetPassSetPageShowFun, otpVerifyFun, changePasswordFun, changePasswordLogicFun, forgetPasswordVerifyEmailFun, logOutFun, dashboardPageShowFun, addAdminPageShowFun, viewAdminPageShowFun, addAdminLogicFun
+    , deleteAdminFun, editAdminPageShowFun, editAdminLogicFun,
+    profilePageShowFun,
+    otpVerifyPageShowFun } = require("../controller/pageController")
 const route = express.Router()
 
 const myStorage = multer.diskStorage({
@@ -12,46 +12,45 @@ const myStorage = multer.diskStorage({
     },
     filename: (req, file, cb) => {
         cb(null, `${Date.now()}_ ${file.originalname}`)
-
     }
 })
-const myUpload=multer({storage:myStorage})
+const myUpload = multer({ storage: myStorage })
 
 // 1 forget pass nu page create
 // 2 forgetPass nu page open mate  route and  contoler ..log in na recover  btn ma path chnge a href maa
-route.get("/otpVerifyPage",otpVerifyPageShowFun)
+route.get("/otpVerifyPage", otpVerifyPageShowFun)
 // 3 
-route.post("/otpVerifyPost",otpVerifyFun)
+route.post("/otpVerifyPost", otpVerifyFun)
 // 6 forget password set page show
-route.get("/forgetPassSetPage",forgetPassSetPageShowFun)
+route.get("/forgetPassSetPage", forgetPassSetPageShowFun)
 // 7
-route.post("/newPassSet",newPassSetFun)
+route.post("/newPassSet", newPassSetFun)
 
-route.get("/",adminLoginShowFun)
-route.post("/adminLoginChecked",adminLoginCheckedFun)
-route.get("/logout",logOutFun)
+route.get("/", adminLoginShowFun)
+route.post("/adminLoginChecked", adminLoginCheckedFun)
+route.get("/logout", logOutFun)
 
 // change password
-route.get("/changePassword",changePasswordFun)
-route.post("/postPasswordChange",changePasswordLogicFun)
+route.get("/changePassword", changePasswordFun)
+route.post("/postPasswordChange", changePasswordLogicFun)
 
 // forget password
-route.post("/forgetPasswordVerifyEmail",forgetPasswordVerifyEmailFun)
+route.post("/forgetPasswordVerifyEmail", forgetPasswordVerifyEmailFun)
 
 // profile page
-route.get("/profilePage",profilePageShowFun)
+route.get("/profilePage", profilePageShowFun)
 
 route.get("/dashboardPage", dashboardPageShowFun)
 route.get("/addAdminPage", addAdminPageShowFun)
 route.get("/viewAdminPage", viewAdminPageShowFun)
 
 // add data
-route.post("/postAddAdmin",myUpload.single("image") ,addAdminLogicFun)
+route.post("/postAddAdmin", myUpload.single("image"), addAdminLogicFun)
 // delete data
-route.get("/deleteAdmin",deleteAdminFun)
+route.get("/deleteAdmin", deleteAdminFun)
 // edit page show
-route.get("/editAdmin/:editId",editAdminPageShowFun)
+route.get("/editAdmin/:editId", editAdminPageShowFun)
 // edit logic
-route.post("/postEditAdmin/:iid",myUpload.single("image"),editAdminLogicFun)
+route.post("/postEditAdmin/:iid", myUpload.single("image"), editAdminLogicFun)
 
 module.exports = route

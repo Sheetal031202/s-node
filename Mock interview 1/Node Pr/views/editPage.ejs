@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>add </title>
+</head>
+<body>
+    
+    <form action="/editMyData/<%=data._id%>" method="POST" enctype="multipart/form-data" >
+        <label for="">Name</label>
+        <input type="text" name="name" value="<%=data.name%>">
+
+          <label for="">Std</label>
+        <input type="text" name="std"  value="<%=data.std%>">
+
+          <label for="">Div</label>
+        <input type="text" name="div"  value="<%=data.div%>">
+
+        <label for="">Image</label>
+        <input type="file" name="image"  value="<%=data.image%>">
+
+        <button type="submit">submit</button>
+    </form>
+</body>
+</html>

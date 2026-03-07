@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>home page</title>
+</head>
+
+<body>
+    <h2>HOME</h2>
+    <% allData.map((e)=>{%>
+
+        <h2>
+            <%=e.name%>
+        </h2>
+        <img src="../<%=e.image%>" width="100px"/>
+<button><a href="/edit/<%=e._id%>">Edit</a></button>
+<button><a href="/delete/<%=e._id%>">delete</a></button>
+        <%})%>
+</body>
+
+</html>
