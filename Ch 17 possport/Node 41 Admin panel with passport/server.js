@@ -17,7 +17,7 @@ const PORT = 8000
 
 
 app.use(cookiePaeser())
-// 7 initialise seeion
+// 7 initialise seeion(routes pela lakhvanu)
 app.use(session({
     name: "AdminSession",
     secret: "AdminPanel@031202#dave",

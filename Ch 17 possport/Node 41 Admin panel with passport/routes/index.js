@@ -27,8 +27,9 @@ route.get("/", adminLoginShowFun)
 // route.post("/adminLoginChecked",
 //      passport.authenticate("adminLocalAuth ",{failureRedirect:"/"}),adminLoginCheckedFun)
 
-route.post( "/adminLoginChecked",
-    passport.authenticate("adminLocalAuth", { failureRedirect: "/" }), adminLoginCheckedFun
+route.post( "/adminLoginChecked", //PATH
+     passport.authenticate("adminLocalAuth", { failureRedirect: "/" }),//MIDDLEWARE
+      adminLoginCheckedFun// FUNNCTION
 )
 
 route.get("/logout", logOutFun)

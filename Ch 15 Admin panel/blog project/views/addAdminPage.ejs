@@ -1,0 +1,122 @@
+<!-- header -->
+<%- include("navbar.ejs")%>
+
+    <!-- main  -->
+
+    <!-- ============================================================== -->
+    <!-- End Left Sidebar - style you can find in sidebar.scss  -->
+    <!-- ============================================================== -->
+    <!-- ============================================================== -->
+    <!-- Page wrapper  -->
+    <!-- ============================================================== -->
+    <div class="page-wrapper">
+        <!-- ============================================================== -->
+        <!-- Bread crumb and right sidebar toggle -->
+        <!-- ============================================================== -->
+        <div class="page-breadcrumb">
+            <div class="row">
+                <div class="col-12 d-flex no-block align-items-center">
+                    <h4 class="page-title">Form Basic</h4>
+                    <div class="ml-auto text-right">
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">Library</li>
+                            </ol>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- ============================================================== -->
+        <!-- End Bread crumb and right sidebar toggle -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- Container fluid  -->
+        <!-- ============================================================== -->
+        <div class="container-fluid">
+            <!-- ============================================================== -->
+            <!-- Start Page Content -->
+            <!-- ============================================================== -->
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="card">
+                        <form class="form-horizontal" method="post" action="/addAdminLogic" enctype="multipart/form-data">
+                            <div class="card-body">
+                                <h4 class="card-title">Personal Info</h4>
+                                <!-- first name -->
+                                <div class="form-group row">
+                                    <label for="fname" class="col-sm-3 text-right control-label col-form-label">First
+                                        Name</label>
+                                    <div class="col-sm-9">
+                                        <input type="text" class="form-control" id="fname" name="fname"
+                                            placeholder="First Name Here">
+                                    </div>
+                                </div>
+                                <!-- last name -->
+                                <div class="form-group row">
+                                    <label for="lname" class="col-sm-3 text-right control-label col-form-label">Last
+                                        Name</label>
+                                    <div class="col-sm-9">
+                                        <input type="text" class="form-control" id="lname" name="lname"
+                                            placeholder="Last Name Here">
+                                    </div>
+                                </div>
+
+                                <!-- email -->
+                                <div class="form-group row">
+                                    <label class="col-sm-3 text-right control-label col-form-label">E mail</label>
+                                    <div class="col-sm-9">
+                                        <input type="email" class="form-control" name="email" placeholder="Email Here">
+                                    </div>
+                                </div>
+                                <!-- passworf -->
+                                <div class="form-group row">
+                                    <label for="email1"
+                                        class="col-sm-3 text-right control-label col-form-label">password</label>
+                                    <div class="col-sm-9">
+                                        <input type="text" class="form-control" id="email1" name="password"
+                                            placeholder="Password Here">
+                                    </div>
+                                </div>
+                                <!-- contact number -->
+                                <div class="form-group row">
+                                    <label for="cono1" class="col-sm-3 text-right control-label col-form-label">Contact
+                                        No</label>
+                                    <div class="col-sm-9">
+                                        <input type="text" class="form-control" id="cono1" name="phone"
+                                            placeholder="Contact No Here">
+                                    </div>
+                                </div>
+
+                                <!-- cImage -->
+                                <div class="form-group row">
+                                    <label for="cono1" class="col-sm-3 text-right control-label col-form-label">Image
+                                    </label>
+                                    <div class="col-sm-9">
+                                        <input type="file" class="form-control" id="cono1" name="image"
+                                            />
+                                    </div>
+                                </div>
+
+
+
+                            </div>
+                            <div class="border-top">
+                                <div class="card-body">
+                                    <button type="submit" class="btn btn-primary">Submit</button>
+                                </div>
+                            </div>
+                        </form>
+
+                    </div>
+
+
+
+                    <!-- ============================================================== -->
+
+
+                    <!-- footer -->
+                </div>
+
+                <%- include("footer.ejs")%>

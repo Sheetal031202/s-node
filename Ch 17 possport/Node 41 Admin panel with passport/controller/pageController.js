@@ -15,20 +15,6 @@ const adminLoginShowFun = async (req, res) => {
 }
 
 
-const profilePageShowFun = async (req, res) => {
-    try {
-        const data = await adminModel.findById(req.cookies.adminId)
-        if (req.cookies.adminId == undefined && !data) {
-            return res.redirect("/")
-        }
-        return res.render("profile/profilePage", { data })
-    }
-    catch (error) {
-        console.log("Server Error", error)
-        res.redirect("/")
-    }
-}
-
 // log in
 const adminLoginCheckedFun = async (req, res) => {
     try {
@@ -185,6 +171,23 @@ const logOutFun = (req, res) => {
     res.redirect("/")
 }
 
+
+// profile page
+const profilePageShowFun = async (req, res) => {
+    try {
+        const data = await adminModel.findById(req.cookies.adminId)
+        if (req.cookies.adminId == undefined && !data) {
+            return res.redirect("/")
+        }
+        return res.render("profile/profilePage", { data })
+    }
+    catch (error) {
+        console.log("Server Error", error)
+        res.redirect("/")
+    }
+}
+
+// in dashboard
 const changePasswordFun = async (req, res) => {
 
     const data = await adminModel.findById(req.cookies.adminId)
@@ -409,12 +412,10 @@ const editAdminLogicFun = async (req, res) => {
 
 
 
-
-
-
-
 module.exports = {
-    adminLoginShowFun, forgetPassSetPageShowFun, newPassSetFun, otpVerifyPageShowFun, otpVerifyFun, adminLoginCheckedFun, logOutFun, changePasswordFun, forgetPasswordVerifyEmailFun, changePasswordLogicFun, profilePageShowFun,
+    adminLoginShowFun, forgetPassSetPageShowFun, newPassSetFun, 
+    otpVerifyPageShowFun, otpVerifyFun, adminLoginCheckedFun, logOutFun, changePasswordFun, forgetPasswordVerifyEmailFun, changePasswordLogicFun, profilePageShowFun,
     dashboardPageShowFun, addAdminPageShowFun, viewAdminPageShowFun,
+
     addAdminLogicFun, deleteAdminFun, editAdminPageShowFun, editAdminLogicFun
 }

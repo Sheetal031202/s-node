@@ -445,7 +445,9 @@ const editAdminLogicFun = async (req, res) => {
 
 
 module.exports = {
-    adminLoginShowFun, forgetPassSetPageShowFun, newPassSetFun, otpVerifyPageShowFun, otpVerifyFun, adminLoginCheckedFun, logOutFun, changePasswordFun, forgetPasswordVerifyEmailFun, changePasswordLogicFun, profilePageShowFun,
+    adminLoginShowFun, forgetPassSetPageShowFun, newPassSetFun,
+     otpVerifyPageShowFun, otpVerifyFun, adminLoginCheckedFun, logOutFun, changePasswordFun, 
+     forgetPasswordVerifyEmailFun, changePasswordLogicFun, profilePageShowFun,
     dashboardPageShowFun, addAdminPageShowFun, viewAdminPageShowFun,
     addAdminLogicFun, deleteAdminFun, editAdminPageShowFun, editAdminLogicFun
 }

@@ -55,10 +55,7 @@
                                             <th>City</th>
                                             <th>About</th>
                                             <th>Image</th>
-                                         <%if(data.email=="sheetaldave0312@gmail.com"){%>
-                                                                                        <th>Action</th>
-
-                                           <%  } %>
+                                        <th>Action</th>
 
                                         </tr>
                                     </thead>
@@ -79,7 +76,7 @@
                                                 <%if(data.email=="sheetaldave0312@gmail.com"){%>
  <td>
                                                     <button class="btn btn-success"><a class="text-light" href="/editAdmin/<%=e._id%>">Edit</a></button>
-                                                    <button class="btn btn-danger"><a  class="text-light"href="/deleteAdmin/?deleteId=<%=e._id%>">Delete</a></button>
+                                                    <button class="btn btn-danger"><a class="text-light"href="/deleteAdmin/?deleteId=<%=e._id%>">Delete</a></button>
                                                 </td>
                                            <%  } %>
                                             

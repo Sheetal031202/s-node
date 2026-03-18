@@ -8,7 +8,7 @@ const adminModel = require("../model/adminModel")
 // 2
 // use ma loval stategy ni method
 // local startegy 2 parameter ley object and function
-// function ma 3 parameter 1=jenathi authentication karvu e, 2=password,3rd done name no call back function
+// function ma 3 parameter 1=jenathi authentication  karvu e, 2=password,3rd done name no call back function
 passport.use("adminLocalAuth", new localStrategy({
     usernameField: "email"
 },
@@ -32,7 +32,7 @@ passport.serializeUser((userData, done) => {
     return done(null, userData.id)
 })
 
-// 6 pnly id accept karse
+// 6 only id accept karse deserialize
 // to store in sesseion
 passport.deserializeUser(async (userId, done) => {
     console.log("deserializeUser data", userId)

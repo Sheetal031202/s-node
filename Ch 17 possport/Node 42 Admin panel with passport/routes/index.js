@@ -29,10 +29,12 @@ const route = express.Router()
 /* ================= AUTH NOT DONE (Before Login) ================= */
 
 // Login page
+//4
 route.get("/", passport.checkAuthNotDone, adminLoginShowFun)
 
 // Login check
 route.post("/adminLoginChecked",
+    // 4
     passport.checkAuthNotDone,
     passport.authenticate("adminLocalAuth", { failureRedirect: "/" }),
     adminLoginCheckedFun
@@ -96,6 +98,7 @@ route.get("/profilePage",
 
 // Dashboard
 route.get("/dashboardPage",
+    // 2
     passport.checkAuthDone,
     dashboardPageShowFun
 )
