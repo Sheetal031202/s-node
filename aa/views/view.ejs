@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+     <style>
+        body{
+            background-color: black;
+            color: white;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <%- include("navbar") %>
+    <h2>VIew</h2>
+
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Image</th>
+                <th>Name</th>
+                <th>std</th>
+                <th>action </th>
+            </tr>
+        </thead>
+        <tbody>
+            <% allData.map((e)=>{%>
+
+                <tr>
+                    <th><img src="<%=e.image%>" width="100px" alt=""></th>
+                    <th><%=e.name%> </th>
+                    <th><%=e.std%> </th>
+                   <th>
+                     <button><a href="/edit/<%=e.id%>">Edit</a></button>
+                    <button><a href="/delete/<%=e.id%>">delete</a></button>
+                   </th>
+                </tr>
+                <%})%>
+
+        </tbody>
+    </table>
+
+
+    <% allData.map((e)=>{%>
+        <h2>
+        </h2>
+        <%})%>
+</body>
+
+</html>

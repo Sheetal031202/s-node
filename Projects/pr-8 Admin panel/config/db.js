@@ -1,6 +1,8 @@
 const mongoose=require("mongoose")
-const URL="mongodb://localhost:27017/admin-Panel"
 
+const env=require("dotenv")
+env.config()
+const URL=process.env.mongodb_URL
 
 mongoose.connect(URL)
 .then(()=>{console.log("database connected...")})

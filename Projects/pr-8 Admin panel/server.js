@@ -6,8 +6,9 @@ const cookiePaeser=require("cookie-parser")
 
 // require database
 require("./config/db")
-
-const PORT=8000
+const env=require("dotenv")
+env.config()
+const PORT=process.env.PORT
 
 
 app.use(cookiePaeser())
@@ -26,5 +27,5 @@ app.use("/",require("./routes/index"))
 
 app.listen(PORT,(e)=>{
     if(e){console.log("server is not starting")}
-    console.log("server started..")
+    console.log(`server is ruuning on Port ${PORT} ..`)
 })

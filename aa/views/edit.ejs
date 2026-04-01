@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: black;
+            color: white;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    
+    <%- include("navbar") %>
+
+    <h1>Updated...</h1>
+
+    <form action="/editdata/<%=d.id%>" method="post" enctype="multipart/form-data">
+        <label for="">Name</label>
+        <input type="text" value="<%=d.name%>" name="name">
+
+        <label for="">std</label>
+        <input type="text" value="<%=d.std%>" name="std">
+
+        <label for="Image"></label>
+        <input type="file" value="<%=d.image%>" name="image">
+        <img src="../<%=d.image%>" width="100px" alt="">
+        <button type="submit">Submit</button>
+    </form>
+
+</body>
+</html>
