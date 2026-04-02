@@ -1,0 +1,86 @@
+<!-- header -->
+<%- include("../header.ejs")%>
+
+    <!-- main  -->
+
+    <!-- ============================================================== -->
+    <!-- End Left Sidebar - style you can find in sidebar.scss  -->
+    <!-- ============================================================== -->
+    <!-- ============================================================== -->
+    <!-- Page wrapper  -->
+    <!-- ============================================================== -->
+    <div class="page-wrapper">
+        <!-- ============================================================== -->
+        <!-- Bread crumb and right sidebar toggle -->
+        <!-- ============================================================== -->
+        <div class="page-breadcrumb">
+            <div class="row">
+                <div class="col-12 d-flex no-block align-items-center">
+                    <h4 class="page-title">Edit Category </h4>
+                    <div class="ml-auto text-right">
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">Library</li>
+                            </ol>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- ============================================================== -->
+        <!-- End Bread crumb and right sidebar toggle -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- Container fluid  -->
+        <!-- ============================================================== -->
+        <div class="container-fluid">
+            <!-- ============================================================== -->
+            <!-- Start Page Content -->
+            <!-- ============================================================== -->
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="card">
+                        <form class="form-horizontal" method="post" action="/category/postEditCategory/<%=singleCat._id%>" enctype="multipart/form-data">
+                            <div class="card-body">
+                                <h4 class="card-title">Personal Info</h4>
+                                <!-- first name -->
+                                <div class="form-group row">
+                                    <label  class="col-sm-3 text-right control-label col-form-label">category
+                                        Name</label>
+                                    <div class="col-sm-9">
+                                        <input type="text" name="categoryName" value=<%=singleCat.categoryName%> />
+                                       
+                                    </div>
+                                </div>
+                               
+
+                              
+                                <!-- upload image -->
+                                <div class="form-group row">
+                                    <label class="col-md-3">File Upload</label>
+                                    <div class="col-md-9">
+                                        <div class="custom-file">
+                                            <input type="file" name="categoryImage">
+                                            <img src="../../<%=singleCat.image%>" value=<%=singleCat.categoryImage%> width="100 " alt="">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="border-top">
+                                <div class="card-body">
+                                    <button type="submit" class="btn btn-warning">Update</button>
+                                </div>
+                            </div>
+                        </form>
+
+                    </div>
+
+
+
+                    <!-- ============================================================== -->
+
+
+                    <!-- footer -->
+<%- include("../footer.ejs")%>
+                </div>
